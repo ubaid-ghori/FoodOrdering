@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, TextInput,Image } from "react-native";
+import { View, Text, StyleSheet, TextInput, Image } from "react-native";
 import React, { useState } from "react";
 import Button from "@/components/Button";
 import { defaultPizzaImage } from "@/components/ProductListItem";
 import Colors from "@/constants/Colors";
-import * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from "expo-image-picker";
 import { Stack } from "expo-router";
 
 const CreateProductScreen = () => {
@@ -15,7 +15,7 @@ const CreateProductScreen = () => {
   const resetFields = () => {
     setName("");
     setPrice("");
-    setErrors(""); 
+    setErrors("");
   };
 
   const validateInput = () => {
@@ -35,9 +35,8 @@ const CreateProductScreen = () => {
       return;
     }
     console.warn("Product created:", name);
-    resetFields();  
+    resetFields();
   };
-
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -57,9 +56,14 @@ const CreateProductScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{title:'Create Product'}} />
-        <Image source={{uri:image || defaultPizzaImage}} style={styles.image} />
-        <Text onPress={pickImage} style={styles.textBtn}>Select Image</Text>
+      <Stack.Screen options={{ title: "Create Product" }} />
+      <Image
+        source={{ uri: image || defaultPizzaImage }}
+        style={styles.image}
+      />
+      <Text onPress={pickImage} style={styles.textBtn}>
+        Select Image
+      </Text>
       <Text style={styles.label}>Name</Text>
       <TextInput
         placeholder="Product Name"
@@ -67,7 +71,7 @@ const CreateProductScreen = () => {
         onChangeText={setName}
         style={styles.input}
       />
-      
+
       <Text style={styles.label}>Price $</Text>
       <TextInput
         placeholder="e.g., 9.99"
@@ -76,7 +80,7 @@ const CreateProductScreen = () => {
         style={styles.input}
         keyboardType="numeric"
       />
-      
+
       {errors ? <Text style={styles.errorText}>{errors}</Text> : null}
 
       <Button onPress={onCreate} text="Create" />
@@ -90,17 +94,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 10,
   },
-  image:{
-    width: '50%',
-    aspectRatio:1,
-    alignSelf: 'center',
+  image: {
+    width: "50%",
+    aspectRatio: 1,
+    alignSelf: "center",
   },
-  textBtn:{
-    alignSelf:'center',
+  textBtn: {
+    alignSelf: "center",
     fontSize: 16,
     color: Colors.light.tint,
-    fontWeight: 'bold',
-    marginVertical:10
+    fontWeight: "bold",
+    marginVertical: 10,
   },
   label: {
     color: "gray",
@@ -114,7 +118,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   errorText: {
-    color: 'red',
+    color: "red",
     marginBottom: 20,
   },
 });
