@@ -34,6 +34,7 @@ const ProductDetailsScreen = () => {
         source={{ uri: product?.image || defaultPizzaImage }}
         style={styles.image}
       />
+      <Text style={styles.title}>${product?.name}</Text>
       <Text style={styles.price}>${product?.price}</Text>
     </View>
   );
@@ -48,6 +49,10 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     aspectRatio: 1,
+  },
+  title:{
+    fontSize: 20,
+    fontWeight: "bold",
   },
   price: {
     fontSize: 18,

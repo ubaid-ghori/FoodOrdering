@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image,Pressable } from "react-native";
 import { Product } from "../types";
 import { Link, useSegments } from "expo-router";
 export const defaultPizzaImage =
-  "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/food/default.png";
+  "https://nypizzanwings.com/wp-content/uploads/2020/03/500-02.png";
 
 type ProductListItemProps = {
   product: Product;
