@@ -1,5 +1,5 @@
 import Colors from "@/constants/Colors";
-import { StyleSheet, Text, View, Image,Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import { Product } from "../types";
 import { Link, useSegments } from "expo-router";
 export const defaultPizzaImage =
